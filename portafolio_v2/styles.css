@@ -1,0 +1,126 @@
+/* ============================================================
+   PORTAFOLIO - SEMANA 2
+   Mejoras: CSS Flexbox y CSS Grid Layout
+   ============================================================ */
+
+/* ── Estilos base ── */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* ============================================================
+   TASK 2: Header y navegación con Flexbox
+   - display: flex convierte el header en contenedor flexible
+   - justify-content: space-between separa el título y el nav
+   - align-items: center centra verticalmente el contenido
+   ============================================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+/* ── Navegación: Flexbox para distribuir enlaces uniformemente ── */
+nav {
+    display: flex;
+    justify-content: space-evenly; /* distribución uniforme entre enlaces */
+    align-items: center;           /* centra verticalmente los enlaces */
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* ── Secciones generales ── */
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* ============================================================
+   TASK 3: Sección de proyectos con CSS Grid Layout
+   - display: grid activa el modelo de cuadrícula
+   - grid-template-columns: 2 columnas de igual ancho con repeat()
+   - gap: separación visual entre las tarjetas
+   ============================================================ */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 20px;                             /* espacio entre tarjetas */
+}
+
+/* ── Tarjetas de proyecto ── */
+.card {
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   TASK 4 — Galería de mascotas: Grid + Flexbox combinados
+
+   Grid en el contenedor .galeria:
+   - display: grid organiza las imágenes en mosaico
+   - grid-template-columns: 3 columnas iguales
+   - gap: espacio entre elementos
+
+   Flexbox dentro de cada <article>:
+   - display: flex apila imagen y texto en columna
+   - align-items: center centra horizontalmente el contenido
+   ============================================================ */
+
+/* Grid para el layout general de la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* mosaico de 3 columnas */
+    gap: 20px;
+}
+
+/* Flexbox dentro de cada artículo para centrar imagen y pie de foto */
+.galeria article {
+    display: flex;
+    flex-direction: column; /* imagen arriba, texto abajo */
+    align-items: center;    /* centra horizontalmente */
+    text-align: center;
+}
+
+/* ── Imágenes de la galería ── */
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+/* ── Sombra general para imágenes ── */
+img {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Botón del formulario de contacto ── */
+button {
+    margin-top: 10px;
+    padding: 8px;
+}
